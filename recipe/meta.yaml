@@ -21,6 +21,7 @@ requirements:
     - numpy
     - pip
     - cython
+    - urllib3
   run:
     - python
     - {{ pin_compatible('numpy') }}
