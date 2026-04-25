@@ -11,11 +11,12 @@ source:
  
 build:
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   build:
     - {{ compiler('cxx') }}
+    - {{ stdlib("c") }}
   host:
     - python
     - numpy
@@ -24,7 +25,6 @@ requirements:
     - urllib3
   run:
     - python
-    - {{ pin_compatible('numpy') }}
     - pandas >=0.25.3
     - scikit-learn >=0.22.1
     - scipy
